@@ -9,7 +9,16 @@ function takeANumber(line_people,name){
  return "Welcome, "+name+". You are number "+position+" in line.";
  
 }
-
+//want to change so that we give them just a number. 
+//"Welcome, you are number x".
+var numberOfCustomers = 0;
+function takeANumber(line_people){
+  //var number = 0; 
+  
+  line_people.push(++numberOfCustomers);
+  
+  return "Welcome, you are number "+numberOfCustomers;
+}
 
 function nowServing(currentDeliLine){
   if (currentDeliLine === undefined || currentDeliLine.length === 0)
@@ -28,7 +37,8 @@ function currentLine(line_people){
   {
    return "The line is currently empty."; 
   }
-  else{
+  else
+  {
   var returnString = "The line is currently: ";
   
   for (var i = 0 ; i < line_people.length ; i++)
